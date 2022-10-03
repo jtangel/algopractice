@@ -1,5 +1,5 @@
 
-# # Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+# Given a square matrix, calculate the absolute difference between the sums of its diagonals.
 
 def diagonalDifference(arr):
     sum1 = 0
@@ -36,9 +36,9 @@ def plusMinus(arr):
 plusMinus((-4, 3, -9, 0, 4, 1))
 
 
-# # # Its base and height are both equal to n It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
+# # Its base and height are both equal to n It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
 
-# # # Write a program that prints a staircase of n size .
+# # Write a program that prints a staircase of n size .
 
 def staircase(n):
     stairs = ''
@@ -49,7 +49,7 @@ def staircase(n):
 
 staircase(6)
 
-# # Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+# Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
 
 
 
@@ -90,5 +90,36 @@ def birthdayCakeCandles(candles):
 
 
 birthdayCakeCandles([1,4,4,4,3,2])
+
+
+# Given a time in -hour AM/PM format, convert it to military (24-hour) time.
+
+# Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+# - 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock
+
+
+
+def timeConversion(s):
+    newString = ''
+    if s[-2] == 'A' and s[0] == '1':
+        newString = '00' + s[2:8]
+        return newString
+    elif s[-2] == 'A':
+        newString = s[:8]
+    elif s[-2] == 'P' and s[:2] == '12':
+        newString = s[:8]
+    else:
+        x = int(s[:2]) + 12
+        y = s[2:8]
+        newString = (f'{x}{y}')
+    return(newString)
+
+
+
+print(timeConversion('12:01:00AM'))
+print(timeConversion('01:00:00AM'))
+print(timeConversion('06:40:03AM'))
+print(timeConversion('11:00:00PM'))
+print(timeConversion('12:45:54PM'))
 
 
